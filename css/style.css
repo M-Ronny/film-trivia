@@ -14,9 +14,32 @@
     display: block;
     margin: 0 auto;
   }
+
+  .choices {
+    height: 300px;
+  }
   
   
   /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
-  
+  section {
+    text-align: center;
+  }
+
+  h1, h2 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .question {
+    font-size: 25px;
+  }
+
+  button {
+    height: 150px;
+    width: 33.33%;
+  }
