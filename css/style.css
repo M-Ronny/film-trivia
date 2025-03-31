@@ -23,6 +23,10 @@
   /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
+  body {
+    background: rgb(91, 75, 171);
+  }
+
   section {
     text-align: center;
   }
@@ -40,6 +44,25 @@
   }
 
   button {
-    height: 150px;
+    height: 180px;
     width: 33.33%;
+    border-radius: 40px;
+  }
+
+  .a {
+    background: rgb(229, 74, 74);
+  }
+
+  .b {
+    background: rgb(59, 188, 59);
+  }
+
+  .c {
+    background: rgb(195, 207, 54);
+    margin-top: 5px;
+  }
+
+  .d {
+    background: rgb(107, 196, 225);
+    margin-top: 5px;
   }
