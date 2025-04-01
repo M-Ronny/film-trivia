@@ -18,6 +18,7 @@
   .choices {
     height: 300px;
     margin-top: 25px;
+    display: none;
   }
   
   
@@ -34,6 +35,10 @@
 
   h1, h2 {
     font-size: 2em;
+  }
+
+  section h2 {
+    display: none;
   }
 
   p {
