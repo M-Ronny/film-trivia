@@ -1,46 +1,74 @@
-document.querySelector('.startQuiz').addEventListener('click', startQuiz)
+fetch("https://opentdb.com/api.php?amount=20&category=11")
+  .then(res => res.json()) // parse response as JSON
+  .then(data => {
+    console.log(data)
 
-function startQuiz() {
-  document.querySelector('.nextQuestion').style.display = 'block'
-  document.querySelector('.startQuiz').style.display = 'none'
-  document.querySelector('.choices').style.display = 'block'
-  document.querySelector('section h2').style.display = 'block'
+    for (let a = 0; a < data.results.length; a++) {
+      const random = Math.floor(Math.random() * 4)
+      data.results[a].incorrect_answers.splice(random, 0, data.results[a].correct_answer)
+    }
 
-  fetch("https://opentdb.com/api.php?amount=20&category=11")
-    .then(res => res.json()) // parse response as JSON
-    .then(data => {
-      console.log(data)
+    document.querySelector('.nextQuestion').addEventListener('click', nextQuestion)
+    let i = 0
+    let number = 1
 
-      for (let a = 0; a < data.results.length; a++) {
-        const random = Math.floor(Math.random() * 4)
-        data.results[a].incorrect_answers.splice(random, 0, data.results[a].correct_answer)
-      }
+    function nextQuestion() {
+      document.querySelector('.nextQuestion').innerText = 'Next Question'
+      document.querySelector('.choices').style.display = 'block'
+      document.querySelector('section h2').style.display = 'block'
 
-      document.querySelector('section h2').innerText = 'Question 1'
-      document.querySelector('.question').innerText = data.results[0].question
-      document.querySelector('.a').innerText = `A: ${data.results[0].incorrect_answers[0]}`
-      document.querySelector('.b').innerText = `B: ${data.results[0].incorrect_answers[1]}`
-      document.querySelector('.c').innerText = `C: ${data.results[0].incorrect_answers[2]}`
-      document.querySelector('.d').innerText = `D: ${data.results[0].incorrect_answers[3]}`
+      document.querySelector('.a').addEventListener('click', choiceA)
+      document.querySelector('.b').addEventListener('click', choiceB)
+      document.querySelector('.c').addEventListener('click', choiceC)
+      document.querySelector('.d').addEventListener('click', choiceD)
 
-      document.querySelector('.nextQuestion').addEventListener('click', nextQuestion)
-      let i = 1
-      let number = 2
-
-      function nextQuestion() {
-        if (i < data.results.length) {
-          document.querySelector('section h2').innerText = `Question ${number}`
-          document.querySelector('.question').innerText = data.results[i].question
-          document.querySelector('.a').innerText = `A: ${data.results[i].incorrect_answers[0]}`
-          document.querySelector('.b').innerText = `B: ${data.results[i].incorrect_answers[1]}`
-          document.querySelector('.c').innerText = `C: ${data.results[i].incorrect_answers[2]}`
-          document.querySelector('.d').innerText = `D: ${data.results[i].incorrect_answers[3]}`
-          i++
-          number++
+      function choiceA() {
+        if (data.results[i - 1].incorrect_answers[0] === data.results[i - 1].correct_answer) {
+        console.log('correct')
+        } else {
+          console.log('incorrect')
         }
       }
-    })
-    .catch(err => {
-        console.log(`error ${err}`)
-    });
-}
+
+      function choiceB() {
+        if (data.results[i - 1].incorrect_answers[1] === data.results[i - 1].correct_answer) {
+          console.log('correct')
+        } else {
+          console.log('incorrect')
+        }
+      }
+
+      function choiceC() {
+        if (data.results[i - 1].incorrect_answers[2] === data.results[i - 1].correct_answer) {
+          console.log('correct')
+        } else {
+          console.log('incorrect')
+        }
+      }
+
+      function choiceD() {
+        if (data.results[i - 1].incorrect_answers[3] === data.results[i - 1].correct_answer) {
+          console.log('correct')
+        } else {
+          console.log('incorrect')
+        }
+      }
+        
+      if (i < data.results.length) {
+        document.querySelector('section h2').innerText = `Question ${number}`
+        document.querySelector('.question').innerText = data.results[i].question
+        document.querySelector('.a').innerText = `A: ${data.results[i].incorrect_answers[0]}`
+        document.querySelector('.b').innerText = `B: ${data.results[i].incorrect_answers[1]}`
+        document.querySelector('.c').innerText = `C: ${data.results[i].incorrect_answers[2]}`
+        document.querySelector('.d').innerText = `D: ${data.results[i].incorrect_answers[3]}`
+
+        i++
+        number++
+        console.log(i)
+      }
+    }
+  })
+  .catch(err => {
+    console.log(`error ${err}`)
+  });
+

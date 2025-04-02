@@ -78,7 +78,7 @@
     height: 50px;
     width: 150px;
     margin: 6% 0% 0 45%;
-    display: none;
+    /* display: none; */
   }
 
   .startQuiz {
@@ -86,4 +86,5 @@
     height: 50px;
     width: 150px;
     margin: 6% 0% 0 45%;
+    display: none;
   }
