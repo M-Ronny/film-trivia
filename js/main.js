@@ -16,6 +16,11 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
       document.querySelector('.nextQuestion').innerText = 'Next Question'
       document.querySelector('.choices').style.display = 'block'
       document.querySelector('section h2').style.display = 'block'
+      document.querySelector('.answer').innerText = ''
+      document.querySelector('.a').removeAttribute('disabled')
+      document.querySelector('.b').removeAttribute('disabled')
+      document.querySelector('.c').removeAttribute('disabled')
+      document.querySelector('.d').removeAttribute('disabled')
 
       document.querySelector('.a').addEventListener('click', choiceA)
       document.querySelector('.b').addEventListener('click', choiceB)
@@ -24,33 +29,69 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
 
       function choiceA() {
         if (data.results[i - 1].incorrect_answers[0] === data.results[i - 1].correct_answer) {
-        console.log('correct')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = 'Correct!'
         } else {
           console.log('incorrect')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
       function choiceB() {
         if (data.results[i - 1].incorrect_answers[1] === data.results[i - 1].correct_answer) {
-          console.log('correct')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = 'Correct!'
         } else {
           console.log('incorrect')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
       function choiceC() {
         if (data.results[i - 1].incorrect_answers[2] === data.results[i - 1].correct_answer) {
-          console.log('correct')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = 'Correct!'
         } else {
           console.log('incorrect')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
       function choiceD() {
         if (data.results[i - 1].incorrect_answers[3] === data.results[i - 1].correct_answer) {
-          console.log('correct')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = 'Correct!'
         } else {
           console.log('incorrect')
+          document.querySelector('.a').disabled = 'true'
+          document.querySelector('.b').disabled = 'true'
+          document.querySelector('.c').disabled = 'true'
+          document.querySelector('.d').disabled = 'true'
+          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
         
