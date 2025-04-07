@@ -42,7 +42,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
           document.querySelector('.b').disabled = 'true'
           document.querySelector('.c').disabled = 'true'
           document.querySelector('.d').disabled = 'true'
-          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+          document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
@@ -59,7 +59,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
           document.querySelector('.b').disabled = 'true'
           document.querySelector('.c').disabled = 'true'
           document.querySelector('.d').disabled = 'true'
-          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+          document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
@@ -76,7 +76,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
           document.querySelector('.b').disabled = 'true'
           document.querySelector('.c').disabled = 'true'
           document.querySelector('.d').disabled = 'true'
-          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+          document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
 
@@ -93,7 +93,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
           document.querySelector('.b').disabled = 'true'
           document.querySelector('.c').disabled = 'true'
           document.querySelector('.d').disabled = 'true'
-          document.querySelector('.answer').innerText = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+          document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
         }
       }
         
@@ -112,10 +112,10 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
       } else {
         document.querySelector('section h2').innerText = `Question ${number}/20`
         document.querySelector('.question').innerHTML = data.results[i].question
-        document.querySelector('.a').innerText = `A: ${data.results[i].incorrect_answers[0]}`
-        document.querySelector('.b').innerText = `B: ${data.results[i].incorrect_answers[1]}`
-        document.querySelector('.c').innerText = `C: ${data.results[i].incorrect_answers[2]}`
-        document.querySelector('.d').innerText = `D: ${data.results[i].incorrect_answers[3]}`
+        document.querySelector('.a').innerHTML = `A: ${data.results[i].incorrect_answers[0]}`
+        document.querySelector('.b').innerHTML = `B: ${data.results[i].incorrect_answers[1]}`
+        document.querySelector('.c').innerHTML = `C: ${data.results[i].incorrect_answers[2]}`
+        document.querySelector('.d').innerHTML = `D: ${data.results[i].incorrect_answers[3]}`
 
         i++
         number++
