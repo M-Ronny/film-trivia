@@ -21,6 +21,8 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
       document.querySelector('.b').removeAttribute('disabled')
       document.querySelector('.c').removeAttribute('disabled')
       document.querySelector('.d').removeAttribute('disabled')
+      document.querySelector('.c').style.display = 'inline'
+      document.querySelector('.d').style.display = 'inline'
 
       document.querySelector('.a').addEventListener('click', choiceA)
       document.querySelector('.b').addEventListener('click', choiceB)
@@ -95,9 +97,21 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         }
       }
         
-      if (i < data.results.length) {
-        document.querySelector('section h2').innerText = `Question ${number}`
-        document.querySelector('.question').innerText = data.results[i].question
+      if (data.results[i].type === 'boolean' && i < data.results.length) {
+        document.querySelector('.c').style.display = 'none'
+        document.querySelector('.d').style.display = 'none'
+
+        document.querySelector('section h2').innerText = `Question ${number}/20`
+        document.querySelector('.question').innerHTML = data.results[i].question
+        document.querySelector('.a').innerText = `A: ${data.results[i].incorrect_answers[0]}`
+        document.querySelector('.b').innerText = `B: ${data.results[i].incorrect_answers[1]}`
+
+        i++
+        number++
+        console.log(i)
+      } else {
+        document.querySelector('section h2').innerText = `Question ${number}/20`
+        document.querySelector('.question').innerHTML = data.results[i].question
         document.querySelector('.a').innerText = `A: ${data.results[i].incorrect_answers[0]}`
         document.querySelector('.b').innerText = `B: ${data.results[i].incorrect_answers[1]}`
         document.querySelector('.c').innerText = `C: ${data.results[i].incorrect_answers[2]}`
