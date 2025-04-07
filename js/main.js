@@ -28,6 +28,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
       document.querySelector('.b').style.background = 'rgb(59, 188, 59)'
       document.querySelector('.c').style.background = 'rgb(195, 207, 54)'
       document.querySelector('.d').style.background = 'rgb(107, 196, 225)'
+      document.querySelector('.nextQuestion').disabled = 'true'
 
       document.querySelector('.a').addEventListener('click', choiceA)
       document.querySelector('.b').addEventListener('click', choiceB)
@@ -77,6 +78,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerText = 'Correct!'
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
         
         score++
         console.log(score)
@@ -91,6 +93,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
       }
     }
 
@@ -105,6 +108,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerText = 'Correct!'
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
 
         score++
         console.log(score)
@@ -119,6 +123,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
       }
     }
 
@@ -133,6 +138,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.b').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerText = 'Correct!'
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
 
         score++
         console.log(score)
@@ -147,6 +153,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.b').style.background = 'grey'
         document.querySelector('.d').style.background = 'grey'
         document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
       }
     }
 
@@ -161,6 +168,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.b').style.background = 'grey'
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.answer').innerText = 'Correct!'
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
 
         score++
         console.log(score)
@@ -175,6 +183,7 @@ fetch("https://opentdb.com/api.php?amount=20&category=11")
         document.querySelector('.b').style.background = 'grey'
         document.querySelector('.c').style.background = 'grey'
         document.querySelector('.answer').innerHTML = `Incorrect! The correct answer is "${data.results[i - 1].correct_answer}"`
+        document.querySelector('.nextQuestion').removeAttribute('disabled')
       }
     }
   })
