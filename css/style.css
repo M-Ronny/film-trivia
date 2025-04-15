@@ -27,6 +27,8 @@
   /*******************************************/
   body {
     background: rgb(91, 75, 171);
+    font-family: 'Bangers', sans-serif;
+    letter-spacing: 1px;
   }
 
   section {
@@ -47,6 +49,10 @@
 
   .question {
     font-size: 20px;
+  }
+
+  .choices {
+    font-size: 25px;
   }
 
   button {
