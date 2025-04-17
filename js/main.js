@@ -1,8 +1,6 @@
 fetch("https://opentdb.com/api.php?amount=20&category=11")
   .then(res => res.json()) // parse response as JSON
   .then(data => {
-    console.log(data)
-
     for (let a = 0; a < data.results.length; a++) {
       const random = Math.floor(Math.random() * 4)
       data.results[a].incorrect_answers.splice(random, 0, data.results[a].correct_answer)
